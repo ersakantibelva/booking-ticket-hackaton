@@ -99,7 +99,7 @@ let obj = [
     {
         eventType: 'Indoor',
         eventName: 'Major-ity',
-        month: 'Januari',
+        month: 'January',
         city: 'Lombok',
         price: 200000,
         image: "/indoor/major-ity-jan---15-www.event_music.com.png"
@@ -107,7 +107,7 @@ let obj = [
     {
         eventType: 'Indoor',
         eventName: 'Silent-ly',
-        month: 'Maret',
+        month: 'March',
         city: 'Bandung',
         price: 250000,
         image: "/indoor/silent-ly-mar---15-www.event_music.com.png"
@@ -115,7 +115,7 @@ let obj = [
     {
         eventType: 'Indoor',
         eventName: 'The Notes',
-        month: 'Mei',
+        month: 'May',
         city: 'Surabaya',
         price: 200000,
         image: "/indoor/the-notes-may--15-www.event_music.com.png"
@@ -123,7 +123,7 @@ let obj = [
     {
         eventType: 'Indoor',
         eventName: 'Hi-story',
-        month: 'Juli',
+        month: 'July',
         city: 'Yogyakarta',
         price: 150000,
         image: "/indoor/hi-story-july--15-www.event_music.com.png"
