@@ -234,7 +234,7 @@ function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 }
 
 function addThemAll(processed) {
-    const parent = document.getElementById("content")
+    const parent = document.getElementById("filtered")
     while (parent.firstChild) {
     parent.firstChild.remove()
     }
