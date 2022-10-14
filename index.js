@@ -175,6 +175,7 @@ let date;
 let eventType;
 let city;
 
+let cartList = {}
 
 function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 
@@ -258,6 +259,7 @@ function addThemAll(processed) {
 
         let name = document.createElement('h3')
         name.textContent = processed[i].eventName
+        name.classList.add("event"+i)
 
         let city = document.createElement('p')
         city.textContent = processed[i].city
@@ -268,11 +270,30 @@ function addThemAll(processed) {
         let price = document.createElement('p')
         price.textContent = processed[i].price
 
+        let button = document.createElement('div')
+        // button.classList.add("addToCart-button")
+        button.setAttribute("id", "event"+i)
+        button.setAttribute("class", "addToCart-button")
+        button.textContent = "Add to Cart"
+        button.onclick = function() {
+            let temp = (document.querySelector(`.${this.id}`)).textContent
+            if (cartList[temp] === undefined) {
+                cartList[temp] = 0
+            }
+            cartList[temp] += 1;
+            addTable(cartList, temp)
+        }
+      
+
+        
+        
+
         event.appendChild(pic)
         event.appendChild(name)
         event.appendChild(city)
         event.appendChild(month)
         event.appendChild(price)
+        event.appendChild(button)
 
         
         grid.appendChild(event)
@@ -280,6 +301,8 @@ function addThemAll(processed) {
         if (i%4 === 3 || i === processed.length-1)  {
             parent.appendChild(grid)
         }
+
+        
 
     }
 
@@ -290,6 +313,7 @@ function addThemAll(processed) {
 
 
 }
+
 
 // FILTER EVENT
 
@@ -344,8 +368,82 @@ varMinPrice.addEventListener("input", () => {
 
 
 
+//ONCLICK MASUKIN CHECKOUT
+
+function addTable(object, name) {
+
+    let temp;
+
+    for (let data of obj) {
+        if (data.eventName === name){
+            temp = data;
+            break;
+        }
+    }
+
+    document.querySelectorAll
+
+    const row= document.createElement("tr")
+
+    if (document.getElementById("quantity"+name)) {
+        document.getElementById("quantity"+name).textContent = object[name]
+        document.getElementById("total"+name).textContent = Number(document.getElementById("quantity"+name).textContent) * Number(document.getElementById("price"+name).textContent)
+    } else {
+        const cellName = document.createElement("td")
+cellName.textContent = temp.eventName
+
+const cellCity = document.createElement("td")
+cellCity.textContent = temp.city
+
+const cellQuantity = document.createElement("td")
+cellQuantity.textContent = object[name]
+cellQuantity.setAttribute("id", "quantity"+name) // + filter.name
+
+const cellPrice = document.createElement("td")
+cellPrice.textContent = temp.price
+cellPrice.setAttribute("id", "price"+name) // + filter.name
+
+
+const cellButtonMinus = document.createElement("td")
+cellButtonMinus.textContent = "Reduce"
+cellButtonMinus.setAttribute("id", "buttonMinus")
+cellButtonMinus.onclick = function() {
+    if (Number(cartList[name]) > 0) {
+        cartList[name] -= 1
+        addTable(cartList, name)
+    }
+        
+}
+
+
+const cellButtonAdd = document.createElement("td")
+cellButtonAdd.textContent = "Add"
+cellButtonAdd.setAttribute("id", "buttonAdd")
+cellButtonAdd.onclick = function() {
+        cartList[name] += 1
+        addTable(cartList, name)   
+}
+
+
+const cellTotal = document.createElement("td")
+cellTotal.setAttribute("id", "total"+name) // + filter.name
+cellTotal.textContent = Number(cellQuantity.textContent) * Number (cellPrice.textContent)
 
 
 
+row.appendChild(cellName)
+row.appendChild(cellCity)
+row.appendChild(cellQuantity)
+row.appendChild(cellPrice)
+row.appendChild(cellButtonMinus)
+row.appendChild(cellButtonAdd)
+row.appendChild(cellTotal)
 
+document.getElementById("table-checkout").appendChild(row)
+    }
+
+
+
+ 
+}
 
