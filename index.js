@@ -175,6 +175,7 @@ let date;
 let eventType;
 let city;
 
+let cartList = {}
 
 function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 
@@ -258,6 +259,7 @@ function addThemAll(processed) {
 
         let name = document.createElement('h3')
         name.textContent = processed[i].eventName
+        name.classList.add("event"+i)
 
         let city = document.createElement('p')
         city.textContent = processed[i].city
@@ -268,11 +270,20 @@ function addThemAll(processed) {
         let price = document.createElement('p')
         price.textContent = processed[i].price
 
+        let button = document.createElement('button')
+        button.classList.add("addToCart-button")
+        grid.setAttribute("id", "event"+i)
+        button.textContent = "Add to Cart"
+
+        
+        
+
         event.appendChild(pic)
         event.appendChild(name)
         event.appendChild(city)
         event.appendChild(month)
         event.appendChild(price)
+        event.appendChild(button)
 
         
         grid.appendChild(event)
@@ -281,10 +292,13 @@ function addThemAll(processed) {
             parent.appendChild(grid)
         }
 
+        
+
     }
 
 
 }
+
 
 // FILTER EVENT
 
@@ -336,11 +350,15 @@ varMinPrice.addEventListener("input", () => {
     addThemAll(processed)
   });
 
+    const allButtons = document.querySelectorAll(".addToCart-button");
+    allButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            console.log("test")
+            // let findID = this.id
+            // console.log(findID)
+        });
+    });
 
 
 
-
-
-
-
-
+ 
