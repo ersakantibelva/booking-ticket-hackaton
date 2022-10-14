@@ -234,6 +234,8 @@ function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 
 }
 
+let processedFlag = false
+
 function addThemAll(processed) {
     const parent = document.getElementById("filtered")
     while (parent.firstChild) {
@@ -259,7 +261,7 @@ function addThemAll(processed) {
 
         let name = document.createElement('h3')
         name.textContent = processed[i].eventName
-        name.classList.add("event"+i)
+        name.classList.add("event-"+i)
 
         let city = document.createElement('p')
         city.textContent = processed[i].city
@@ -272,7 +274,8 @@ function addThemAll(processed) {
 
         let button = document.createElement('button')
         button.classList.add("addToCart-button")
-        grid.setAttribute("id", "event"+i)
+        button.setAttribute('onClick', 'addToCart(this)')
+        button.setAttribute("id", "event-"+i)
         button.textContent = "Add to Cart"
 
         
@@ -293,10 +296,10 @@ function addThemAll(processed) {
         }
 
         
-
     }
-
-
+    
+    
+    processedFlag = true
 }
 
 
@@ -350,14 +353,27 @@ varMinPrice.addEventListener("input", () => {
     addThemAll(processed)
   });
 
-    const allButtons = document.querySelectorAll(".addToCart-button");
-    allButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            console.log("test")
-            // let findID = this.id
-            // console.log(findID)
-        });
-    });
+function addToCart(input) {
+    console.log('berhasil')
+    console.log(input.id)
+    
+}
+
+  if (processedFlag) {
+    //   let allButtons = document.querySelectorAll("addToCart-button");
+    //   console.log(allButtons)
+    //   for (let i = 0; i < allButtons.length; i++) {
+    //       console.log(allButtons[i])
+    //   }
+    //   allButtons.forEach((button) => {
+    //       button.addEventListener('click', () => {
+    //           console.log("test")
+              // let findID = this.id
+              // console.log(findID)
+    //       });
+    //   });
+
+  }
 
 
 
