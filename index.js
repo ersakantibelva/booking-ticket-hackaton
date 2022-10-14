@@ -234,6 +234,17 @@ function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 
 }
 
+function totalFinalReveal() {
+    let varTotalPrice = 0;
+    const pointerSum = document.querySelectorAll(".cellFinal") 
+    pointerSum.forEach((td) => {
+        varTotalPrice += (Number(td.textContent))
+        
+    })
+
+    document.getElementById("totalFinal").textContent = Number(varTotalPrice)
+}
+
 function addThemAll(processed) {
     const parent = document.getElementById("filtered")
     while (parent.firstChild) {
@@ -282,6 +293,7 @@ function addThemAll(processed) {
             }
             cartList[temp] += 1;
             addTable(cartList, temp)
+            totalFinalReveal();
         }
       
 
@@ -376,14 +388,16 @@ function addTable(object, name) {
         }
     }
 
-    document.querySelectorAll
+    
+    
 
-    const row= document.createElement("tr")
+    
 
     if (document.getElementById("quantity"+name)) {
         document.getElementById("quantity"+name).textContent = object[name]
         document.getElementById("total"+name).textContent = Number(document.getElementById("quantity"+name).textContent) * Number(document.getElementById("price"+name).textContent)
     } else {
+        const row= document.createElement("tr")
         const cellName = document.createElement("td")
 cellName.textContent = temp.eventName
 
@@ -406,6 +420,7 @@ cellButtonMinus.onclick = function() {
     if (Number(cartList[name]) > 0) {
         cartList[name] -= 1
         addTable(cartList, name)
+        document.getElementById("totalFinal").textContent -= Number(cellPrice.textContent)
     }
         
 }
@@ -416,12 +431,14 @@ cellButtonAdd.textContent = "Add"
 cellButtonAdd.setAttribute("id", "buttonAdd")
 cellButtonAdd.onclick = function() {
         cartList[name] += 1
-        addTable(cartList, name)   
+        addTable(cartList, name)
+ 
 }
 
 
 const cellTotal = document.createElement("td")
 cellTotal.setAttribute("id", "total"+name) // + filter.name
+cellTotal.classList.add("cellFinal")
 cellTotal.textContent = Number(cellQuantity.textContent) * Number (cellPrice.textContent)
 
 
