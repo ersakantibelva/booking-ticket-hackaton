@@ -175,6 +175,7 @@ let date;
 let eventType;
 let city;
 
+let cartList = {}
 
 function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 
@@ -233,6 +234,8 @@ function filterThemAll(data, minPrice, maxPrice, date, eventType, city) {
 
 }
 
+let processedFlag = false
+
 function addThemAll(processed) {
     const parent = document.getElementById("filtered")
     while (parent.firstChild) {
@@ -258,6 +261,7 @@ function addThemAll(processed) {
 
         let name = document.createElement('h3')
         name.textContent = processed[i].eventName
+        name.classList.add("event-"+i)
 
         let city = document.createElement('p')
         city.textContent = processed[i].city
@@ -268,11 +272,21 @@ function addThemAll(processed) {
         let price = document.createElement('p')
         price.textContent = processed[i].price
 
+        let button = document.createElement('button')
+        button.classList.add("addToCart-button")
+        button.setAttribute('onClick', 'addToCart(this)')
+        button.setAttribute("id", "event-"+i)
+        button.textContent = "Add to Cart"
+
+        
+        
+
         event.appendChild(pic)
         event.appendChild(name)
         event.appendChild(city)
         event.appendChild(month)
         event.appendChild(price)
+        event.appendChild(button)
 
         
         grid.appendChild(event)
@@ -281,10 +295,13 @@ function addThemAll(processed) {
             parent.appendChild(grid)
         }
 
+        
     }
-
-
+    
+    
+    processedFlag = true
 }
+
 
 // FILTER EVENT
 
@@ -336,11 +353,28 @@ varMinPrice.addEventListener("input", () => {
     addThemAll(processed)
   });
 
+function addToCart(input) {
+    console.log('berhasil')
+    console.log(input.id)
+    
+}
+
+  if (processedFlag) {
+    //   let allButtons = document.querySelectorAll("addToCart-button");
+    //   console.log(allButtons)
+    //   for (let i = 0; i < allButtons.length; i++) {
+    //       console.log(allButtons[i])
+    //   }
+    //   allButtons.forEach((button) => {
+    //       button.addEventListener('click', () => {
+    //           console.log("test")
+              // let findID = this.id
+              // console.log(findID)
+    //       });
+    //   });
+
+  }
 
 
 
-
-
-
-
-
+ 
