@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <style>
         body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
@@ -132,6 +133,24 @@
         <hr>
 
         
+<div class="form-container">
+    <form action="">
+        <div class="identity">
+                <label for="nama">Nama</label><br>
+                <input type="text" class="form-control" id="f-name" /><br>
+                <label for="handphone">Nomor Handphone</label><br>
+                <input type="text" class="form-control" id="f-handphone" /><br>
+                <label for="nama">Email</label><br>
+                <input type="email" class="form-control" id="f-email" /><br>
+                <button class="btn" onclick="pembayaran()">Lanjut</button>
+        </div>
+        <div class="dataTable">
+            <table class="table table-hover" id="table">
+            </table>
+        </div>
+    </form>
+</div>
+
     </div>
 
     <div id="filtered"></div>

@@ -1,0 +1,30 @@
+.form-container {
+  background-color: grey;
+  color: white;
+  max-width: 8000px;
+  margin: 100px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px 0;
+}
+.btn{
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    background-color: olive;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+}
+.btn:hover{
+    background-color: orange;
+}
+
+/* .dataTable {
+  /* display: none; */
+/* } 
