@@ -283,6 +283,11 @@ function addThemAll(processed) {
 
     }
 
+    const parentSummary = document.getElementById("summary-filter")
+    let summaryMonth = document.createElement('p')
+    summaryMonth.textContent = date
+    parentSummary.appendChild(summaryMonth)
+
 
 }
 
