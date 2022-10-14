@@ -34,98 +34,96 @@
         </div>
     </div>
 
-    <div class="filter-container">
-
- 
-        <form>
-
-        <fieldset>
-            <p>Price</p>
-
-            <label for="min-price">Minimum price: </label>
-            <input
-              type="range"
-              name="min-price"
-              id="min-price"
-              min="0"
-              max="1000000"
-              value="0" />
-            <output class="min-price-output" for="min-price"></output>
-
-            <label for="max-price">Maximum price: </label>
-            <input
-              type="range"
-              name="max-price"
-              id="max-price"
-              min="0"
-              max="1000000"
-              value="1000000" />
-            <output class="max-price-output" for="max-price"></output>
-        </fieldset>
-
-        <fieldset>
-            <select name="date" id="event-date">
-                <option>All months</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
-            </select>
-        </fieldset>
-
-        <fieldset>
-            <label for="indoor">Indoor</label>
-            <input type="radio" id="indoor" name="eventType" value="Indoor">
-
-            <label for="outdoor">Outdoor</label>
-            <input type="radio" id="outdoor" name="eventType" value="Outdoor">
-
-        </fieldset>
-
-        <fieldset>
-            <select name="city" id="city">
-
-                <option>All cities</option>
-
-                <optgroup label="Jawa">
-                    <option>Jakarta</option>
-                    <option>Bandung</option>
-                    <option>Surabaya</option>
-                    <option>Yogyakarta</option>
-                    <option>Malang</option>
-                    <option>Bekasi</option>
-                </optgroup>
-
-                <optgroup label="Bali & Nusa Tenggara">
-                    <option>Bali</option>
-                    <option>Lombok</option>
-                </optgroup>
-
-                <optgroup label="Sumatera">
-                    <option>Padang</option>
-                    <option>Palembang</option>
-                </optgroup>
-
-               
-            </select>
-
-        </fieldset>
-
-        </form>
-
-
-    </div>
-
+    
+    
+    
     <!-- !PAGE CONTENT! -->
     <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+        
+        
+        <div class="filter-container">
+            <form>
+            <fieldset>
+                <p>Price</p>
+    
+                <label for="min-price">Minimum price: </label>
+                <input
+                  type="range"
+                  name="min-price"
+                  id="min-price"
+                  min="0"
+                  max="1000000"
+                  value="0" />
+                <output class="min-price-output" for="min-price"></output>
+    
+                <label for="max-price">Maximum price: </label>
+                <input
+                  type="range"
+                  name="max-price"
+                  id="max-price"
+                  min="0"
+                  max="1000000"
+                  value="1000000" />
+                <output class="max-price-output" for="max-price"></output>
+            </fieldset>
+    
+            <fieldset>
+                <select name="date" id="event-date">
+                    <option>All months</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+            </fieldset>
+    
+            <fieldset>
+                <label for="indoor">Indoor</label>
+                <input type="radio" id="indoor" name="eventType" value="Indoor">
+    
+                <label for="outdoor">Outdoor</label>
+                <input type="radio" id="outdoor" name="eventType" value="Outdoor">
+    
+            </fieldset>
+    
+            <fieldset>
+                <select name="city" id="city">
+    
+                    <option>All cities</option>
+    
+                    <optgroup label="Jawa">
+                        <option>Jakarta</option>
+                        <option>Bandung</option>
+                        <option>Surabaya</option>
+                        <option>Yogyakarta</option>
+                        <option>Malang</option>
+                        <option>Bekasi</option>
+                    </optgroup>
+    
+                    <optgroup label="Bali & Nusa Tenggara">
+                        <option>Bali</option>
+                        <option>Lombok</option>
+                    </optgroup>
+    
+                    <optgroup label="Sumatera">
+                        <option>Padang</option>
+                        <option>Palembang</option>
+                    </optgroup>
+    
+                   
+                </select>
+    
+            </fieldset>
+    
+            </form>
 
         <!-- First Photo Grid-->
         <div class="w3-row-padding w3-padding-16 w3-center" id="food">
