@@ -1972,3 +1972,15 @@ a {
 .w3-hover-border-pale-blue:hover {
     border-color: #e7ffff !important
 }
+
+.title-website {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.title-website img {
+    display: inline-block;
+}
